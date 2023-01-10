@@ -25,10 +25,11 @@ public class Todo {
     private Boolean completed = false;
 
 
-    public Todo(String title) {
+    public Todo(String title,String description) {
         this.title = title;
+        this.description = description;
     }
-    public Todo(String title,String description   ,Boolean completed) {
+    public Todo(String title,String description ,Boolean completed) {
         this.title = title;
         this.description = description;
         this.completed = completed;
