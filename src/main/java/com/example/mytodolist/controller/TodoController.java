@@ -1,14 +1,13 @@
-package controller;
+package com.example.mytodolist.controller;
 
-import models.Todo;
+import com.example.mytodolist.models.Todo;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import services.TodoService;
+import com.example.mytodolist.services.TodoService;
 
 import java.util.List;
 
-@Controller
+
 @RestController
 @RequestMapping("/api/todos")
 public class TodoController {
@@ -36,13 +35,26 @@ public class TodoController {
     }
 
     @GetMapping("/{id}")
-    public Todo findById(@PathVariable Long id) {
-        return todoService.findById(id);
+    public HttpStatus findById(@PathVariable Long id) {
+
+        try{
+            todoService.findById(id);
+            return HttpStatus.OK;
+        }catch (Exception e){
+            return  HttpStatus.NOT_FOUND;
+        }
+
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        todoService.deleteById(id);
+    public HttpStatus deleteById(@PathVariable Long id) {
+        try {
+            todoService.deleteById(id);
+            return HttpStatus.OK;
+        }catch (Exception e){
+            return HttpStatus.BAD_REQUEST;
+        }
+
     }
 }
 

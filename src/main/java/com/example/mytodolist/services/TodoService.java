@@ -1,8 +1,8 @@
-package services;
+package com.example.mytodolist.services;
 
-import models.Todo;
+import com.example.mytodolist.models.Todo;
 import org.springframework.stereotype.Service;
-import repository.TodoRepository;
+import com.example.mytodolist.repository.TodoRepository;
 
 import java.util.List;
 

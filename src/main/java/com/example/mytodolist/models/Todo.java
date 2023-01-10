@@ -1,13 +1,12 @@
-package models;
-
-
-
+package com.example.mytodolist.models;
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -18,14 +17,18 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @NotBlank
     private String title;
 
     private Boolean completed = false;
 
-    public Todo() {}
 
     public Todo(String title) {
         this.title = title;
+    }
+    public Todo(String title,Boolean completed) {
+        this.title = title;
+        this.completed = completed;
     }
 
     // Getters and setters
