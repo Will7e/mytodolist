@@ -20,14 +20,17 @@ public class Todo {
     @NotBlank
     private String title;
 
+    private String description;
+
     private Boolean completed = false;
 
 
     public Todo(String title) {
         this.title = title;
     }
-    public Todo(String title,Boolean completed) {
+    public Todo(String title,String description   ,Boolean completed) {
         this.title = title;
+        this.description = description;
         this.completed = completed;
     }
 

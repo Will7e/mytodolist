@@ -24,10 +24,10 @@ public class Seeder implements CommandLineRunner {
     @Override
     public void run(String... args) {
         todoRepository.saveAll(Arrays.asList(
-                new Todo("Cook",false),
-                new Todo("Push up",false),
-                new Todo("Learn Spring Boot",true),
-                new Todo("Create a todo application",true)));
+                new Todo("Cook","Meals prep",false),
+                new Todo("Push up","100 push up",false),
+                new Todo("Learn Spring Boot","In one week",true),
+                new Todo("Create a todo application","Today",true)));
     }
 }
 

@@ -2,6 +2,7 @@ package com.example.mytodolist.controller;
 
 import com.example.mytodolist.models.Todo;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.mytodolist.services.TodoService;
 
@@ -24,12 +25,12 @@ public class TodoController {
     }
 
     @PostMapping
-    public HttpStatus save(@RequestBody Todo todo) {
+    public ResponseEntity<Todo> save(@RequestBody Todo todo) {
         try {
             todoService.save(todo);
-            return HttpStatus.OK;
+            return new ResponseEntity<>(todo, HttpStatus.OK);
         }catch (Exception e){
-            return HttpStatus.BAD_REQUEST;
+            return new ResponseEntity<>(todo, HttpStatus.BAD_REQUEST);
         }
 
     }
@@ -55,6 +56,11 @@ public class TodoController {
             return HttpStatus.BAD_REQUEST;
         }
 
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Todo> updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
+        Todo updatedTodo = todoService.updateTodo(id, todo);
+        return new ResponseEntity<>(updatedTodo, HttpStatus.OK);
     }
 }
 
