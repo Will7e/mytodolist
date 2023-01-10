@@ -1,13 +1,13 @@
 package controller;
 
 import models.Todo;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import services.TodoService;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/todos")
+@Controller
 public class TodoController {
 
     private final TodoService todoService;
@@ -21,7 +21,7 @@ public class TodoController {
         return todoService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/api/todos")
     public Todo save(@RequestBody Todo todo) {
         return todoService.save(todo);
     }

@@ -1,23 +1,23 @@
 package models;
 
 
-import jakarta.annotation.Nonnull;
+
 import jakarta.persistence.*;
-import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
 
+@Getter
+@Setter
 @Entity
 @Table(name = "todos")
-@Data
 public class Todo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long id;
 
-    @NotBlank
     private String title;
 
     private Boolean completed = false;
