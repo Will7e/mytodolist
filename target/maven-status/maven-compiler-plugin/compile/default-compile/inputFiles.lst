@@ -1,6 +1,6 @@
-/Users/williamle/Documents/mytodolist/src/main/java/models/Todo.java
-/Users/williamle/Documents/mytodolist/src/main/java/services/TodoService.java
-/Users/williamle/Documents/mytodolist/src/main/java/controller/TodoController.java
-/Users/williamle/Documents/mytodolist/src/main/java/data/Seeder.java
+/Users/williamle/Documents/mytodolist/src/main/java/com/example/mytodolist/controller/TodoController.java
+/Users/williamle/Documents/mytodolist/src/main/java/com/example/mytodolist/data/Seeder.java
+/Users/williamle/Documents/mytodolist/src/main/java/com/example/mytodolist/services/TodoService.java
+/Users/williamle/Documents/mytodolist/src/main/java/com/example/mytodolist/models/Todo.java
+/Users/williamle/Documents/mytodolist/src/main/java/com/example/mytodolist/repository/TodoRepository.java
 /Users/williamle/Documents/mytodolist/src/main/java/com/example/mytodolist/TodolistApplication.java
-/Users/williamle/Documents/mytodolist/src/main/java/repository/TodoRepository.java

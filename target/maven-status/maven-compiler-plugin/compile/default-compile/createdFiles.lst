@@ -1,0 +1,6 @@
+com/example/mytodolist/data/Seeder.class
+com/example/mytodolist/repository/TodoRepository.class
+com/example/mytodolist/models/Todo.class
+com/example/mytodolist/services/TodoService.class
+com/example/mytodolist/TodolistApplication.class
+com/example/mytodolist/controller/TodoController.class
