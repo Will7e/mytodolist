@@ -1,6 +1,7 @@
 package controller;
 
 import models.Todo;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import services.TodoService;
@@ -8,6 +9,8 @@ import services.TodoService;
 import java.util.List;
 
 @Controller
+@RestController
+@RequestMapping("/api/todos")
 public class TodoController {
 
     private final TodoService todoService;
@@ -21,9 +24,15 @@ public class TodoController {
         return todoService.findAll();
     }
 
-    @PostMapping("/api/todos")
-    public Todo save(@RequestBody Todo todo) {
-        return todoService.save(todo);
+    @PostMapping
+    public HttpStatus save(@RequestBody Todo todo) {
+        try {
+            todoService.save(todo);
+            return HttpStatus.OK;
+        }catch (Exception e){
+            return HttpStatus.BAD_REQUEST;
+        }
+
     }
 
     @GetMapping("/{id}")
