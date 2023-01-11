@@ -36,13 +36,13 @@ public class TodoController {
     }
 
     @GetMapping("/{id}")
-    public HttpStatus findById(@PathVariable Long id) {
+    public ResponseEntity<Todo>  findById(@PathVariable Long id) {
 
         try{
-            todoService.findById(id);
-            return HttpStatus.OK;
+           Todo todo = todoService.findById(id);
+            return new ResponseEntity<>(todo, HttpStatus.OK);
         }catch (Exception e){
-            return  HttpStatus.NOT_FOUND;
+            return new ResponseEntity<>(HttpStatus.OK);
         }
 
     }
