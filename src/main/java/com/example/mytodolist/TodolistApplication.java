@@ -16,7 +16,7 @@ public class TodolistApplication {
 	public String welcomeMessage(){
 		return " Welcome to my site";
 	}
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(TodolistApplication.class, args);
 	}
